@@ -232,6 +232,10 @@ input[data-error]::after {
     font-size: 0.4em;
     color: red;
 } */
+.formMessage, #radioMessage, #checkboxMessage {
+  font-size: 0.6em;
+  color: red;
+}
 .checkbox-label,
 .checkbox2-label {
   position: relative;

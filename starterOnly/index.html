@@ -58,55 +58,61 @@
           <div class="modal-body">
             <form
               name="reserve"
+              id="subscriptionForm"
               action="index.html"
               method="get"
-              onsubmit="return validate();"
             >
               <div
                 class="formData">
-                <label>Prénom</label><br>
+                <label for="firstname">Prénom</label><br>
                 <input
                   class="text-control"
                   type="text"
-                  id="first"
+                  id="firstname"
                   name="first"
                   minlength="2"
-                /><br>
+                  />
+                <span class="formMessage"></span>
               </div>
               <div
                 class="formData">
-                <label>Nom</label><br>
+                <label for="lastname">Nom</label><br>
                 <input
                   class="text-control"
                   type="text"
-                  id="last"
+                  id="lastname"
                   name="last"
-                /><br>
+                />
+                <span class="formMessage"></span>
               </div>
               <div
                 class="formData">
-                <label>E-mail</label><br>
+                <label for="email">E-mail</label><br>
                 <input
                   class="text-control"
                   type="email"
                   id="email"
                   name="email"
-                /><br>
+                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                />
+                <span class="formMessage"></span>
               </div>
               <div
                 class="formData">
-                <label>Date de naissance</label><br>
+                <label for="birthdate">Date de naissance</label><br>
                 <input
                   class="text-control"
                   type="date"
                   id="birthdate"
                   name="birthdate"
-                /><br>
+                />
+                <span class="formMessage"></span>
               </div>
               <div
                 class="formData">
-                <label>À combien de tournois GameOn avez-vous déjà participé ?</label><br>
-                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
+                <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
+                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99" pattern="^[0-9]*$">
+                <span class="formMessage"></span>
               </div>
               <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
               <div
@@ -178,6 +184,7 @@
                   Portland</label
                 >
               </div>
+              <span id="radioMessage"></span>
 
               <div
                 class="formData">
@@ -199,6 +206,7 @@
                 </label>
                 <br>
               </div>
+              <span id="checkboxMessage"></span>
               <input
                 class="btn-submit"
                 type="submit"
@@ -216,5 +224,6 @@
       </p>
     </footer>
     <script src="modal.js"></script>
+    <script src="formControl.js"></script>
   </body>
 </html>
