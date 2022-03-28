@@ -130,6 +130,9 @@ main {
 .modal-btn:hover {
   background: #3876ac;
 }
+.custom-btn:hover {
+  background: rgb(0, 85, 0);
+}
 
 .footer {
   margin: 20px;
@@ -457,6 +460,17 @@ input[data-error]::after {
   padding: 15px 23px;
   margin: 0;
   margin-top: 59px;
+}
+.custom-btn {
+  background: green;
+  display: flex;
+  margin: auto;
+}
+.custom-txt {
+  font-size: .8em;
+  font-weight: normal;
+  text-align: center;
+  margin: 20px 0;
 }
 .hero-img {
   grid-column: span 8;

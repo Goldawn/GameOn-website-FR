@@ -41,9 +41,10 @@ let saveFormData = (event) => {
 let successSubmit = () => {
     closeModal()
     localStorage.removeItem('formData');
-    alert('Merci ! Votre réservation a été reçue.')
+    successbg.style.display = "block";
     modalBtn[0].innerText="Inscrit !"
     modalBtn[0].style.background="green"
+    modalBtn.forEach((btn) => btn.removeEventListener("click", launchModal));
 }
 
 
@@ -56,7 +57,7 @@ let validateForm = (event) => {
 
     for (let i = 0; i < 5; i++) {
         // On vérifie que les champs de saisie ne sont pas vides
-        if (formArray[i].type="text" && formArray[i].value == "") {
+        if (formArray[i].type="text" && formArray[i].value.trim() == "") {
             errorMessage[i].innerText="Le champ ne peut pas être vide"
             return false;
         }
@@ -66,7 +67,7 @@ let validateForm = (event) => {
             return false;
         }
         // On vérifie que les champs de prénom et nom ne contiennent que des lettres
-        else if((formArray[i].name===('first') || formArray[i].name===('last')) && !(/^[a-zA-Z]+$/.test(formArray[i].value))) {
+        else if((formArray[i].name===('first') || formArray[i].name===('last')) && !(/^[^@&"()!%_$*€£`+=\/;?#\d]+$/.test(formArray[i].value))) {
             errorMessage[i].innerText="Le champ ne doit contenir que de lettres";
             return false;
         }
